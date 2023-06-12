@@ -1,6 +1,4 @@
 function solution(n, lost, reserve) {
-    //[18, 21]
-    //[3, 4, 5, 6, 8, 13, 17, 22, 23, 26, 28]
     for(let i = 0; i<lost.length; i++){
         if (reserve.includes(lost[i])){
             reserve.splice(reserve.indexOf(lost[i]),1)
