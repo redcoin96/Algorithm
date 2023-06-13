@@ -2,24 +2,16 @@ function solution(X, Y) {
     let count1 = {} 
     let count2 = {}
     for(let i = 0; i < X.length; i++){
-        if(Object.keys(count1).includes(X[i])){
-            count1[X[i]] = count1[X[i]] + 1
-        } else {
-            count1[X[i]] = 1
-        }
+       count1[X[i]] = (count1[X[i]] || 0) + 1
     }
     for(let i = 0; i < Y.length; i++){
-        if(Object.keys(count2).includes(Y[i])){
-            count2[Y[i]] = count2[Y[i]] + 1
-        } else {
-            count2[Y[i]] = 1
-        }
+       count2[Y[i]] = (count2[Y[i]] || 0) + 1
     }
     
     let ansobj = {}
     let ansarr = []
     for(i in count1){
-        if(Object.keys(count2).includes(i)){
+        if(count2[i]){
             ansobj[i] = Math.min(count1[i], count2[i])
         }
     }
