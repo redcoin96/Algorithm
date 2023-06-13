@@ -8,6 +8,33 @@ function solution(X, Y) {
        count2[Y[i]] = (count2[Y[i]] || 0) + 1
     }
     
+    let common = {}
+    let ans = ""
+    for(i in count1){
+        if(count2[i]){
+            common[i] = Math.min(count1[i], count2[i])
+        }
+    }
+    for(i in common){
+        ans += i.repeat(common[i])
+    }
+    if(ans === '') return '-1'
+    if(+ans === 0) return '0'
+    return [...ans].map(i => +i).sort((a,b)=>b-a).join('')
+}
+
+
+/*
+function solution(X, Y) {
+    let count1 = {} 
+    let count2 = {}
+    for(let i = 0; i < X.length; i++){
+       count1[X[i]] = (count1[X[i]] || 0) + 1
+    }
+    for(let i = 0; i < Y.length; i++){
+       count2[Y[i]] = (count2[Y[i]] || 0) + 1
+    }
+    
     let ansobj = {}
     let ansarr = []
     for(i in count1){
@@ -32,4 +59,4 @@ function solution(X, Y) {
     }
     return ans
    
-}
+}*/
