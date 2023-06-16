@@ -6,3 +6,4 @@ function solution(food) {
     let reverse = answer.split('').reverse().join('')
     return answer + 0 + reverse
 }
+
