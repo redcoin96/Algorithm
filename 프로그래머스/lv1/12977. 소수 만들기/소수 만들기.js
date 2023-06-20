@@ -5,7 +5,7 @@ function solution(nums) {
            for (let k = j+1; k<nums.length; k++){
                 let sum = nums[i] + nums[j] + nums[k]
                 let isPrime = true
-                for(let i = 2; i < sum; i++){
+                for(let i = 2; i <= Math.sqrt(sum); i++){
                     if(sum%i === 0) isPrime = false
                 }
                 isPrime && count++
