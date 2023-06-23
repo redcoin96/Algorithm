@@ -18,3 +18,5 @@ function solution(s) {
     }
     return result + 1
 }
+
+// 두개의 값이 같아지는 문제 : a경우 +1, b경우 -1 => 0이 될때를 출력!!!!!!
