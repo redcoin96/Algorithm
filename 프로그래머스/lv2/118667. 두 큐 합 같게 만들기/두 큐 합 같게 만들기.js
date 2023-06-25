@@ -6,7 +6,8 @@ function solution(queue1, queue2) {
     let pointer1 = 0;
     let pointer2 = 0;
     
-    for(let i = 0; i < queue1.length * 3; i++){        
+    for(let i = 0; i < queue1.length * 3; i++){
+        //q1을 모두 q2로 보내고, a2에서 하나를 제외하고 모두 a1으로 보내면 q1 * 3이 최대경우의 수     
         if(currentSum === targetSum) return i;
         if(currentSum < targetSum) {
            currentSum += queue2[pointer2]
